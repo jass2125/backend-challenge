@@ -1,0 +1,24 @@
+{
+  "name": "backend-challenge",
+  "version": "1.0.0",
+  "description": "Esse teste é para conhecermos melhor o seu perfil como desenvolvedor, como você escreve seu código, como você toma decisões e como resolve os problemas propostos.",
+  "main": "index.js",
+  "scripts": {
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jass2125/backend-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jass2125/backend-challenge/issues"
+  },
+  "homepage": "https://github.com/jass2125/backend-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
