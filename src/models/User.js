@@ -1,18 +1,18 @@
 
-const { Model } = require('sequelize');
-const { DataTypes } = require('sequelize');
+const { Model, Sequelize } = require('sequelize');
 
 class User extends Model {
   
   static init(sequelize) {
     super.init({
-      name: DataTypes.STRING, 
-      phone: DataTypes.STRING
+      name: Sequelize.STRING, 
+      phone: Sequelize.STRING
     }, {
-      sequelize
+      sequelize,
+      tableName: 'users'
     })
   }
   
 }
 
-module.exports = new User();
+module.exports = User;

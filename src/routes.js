@@ -1,11 +1,12 @@
 const { Router } = require('express');
+require('./database');
+const User = require('../src/models/User');
 
 const routes = Router();
 
-require('./database');
-
-routes.get('/', (req, res) => {
-  return res.json({ msg: 'msg' })
+routes.get('/', async (req, res) => {
+  const users = await User.findAll();
+  return res.json(users)
 })
 
 module.exports = routes;
