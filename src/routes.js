@@ -1,12 +1,29 @@
 const { Router } = require('express');
+const Contact = require('./models/Contact');
+
 require('./database');
-const User = require('../src/models/User');
 
 const routes = Router();
 
-routes.get('/', async (req, res) => {
-  const users = await User.findAll();
-  return res.json(users)
+routes.get('/contacts', async (req, res) => {
+  const contacts = await Contact.findAll();
+  return res.json(contacts)
 })
+
+// routes.post('/contacts', async (req, res) => {
+//   const contacts = await Contact.create({contact: req.body});
+//   return res.json(contacts)
+// })
+
+// routes.put('/contacts', async (req, res) => {
+//   const contacts = await Contact.create({contact: req.body})
+//   return res.json(contacts)
+// })
+
+// routes.delete('/contacts', async (req, res) => {
+
+//   const contacts = await Contact.delete({where : { id : req.query}})
+//   return res.json(contacts)
+// })
 
 module.exports = routes;
