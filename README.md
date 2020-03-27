@@ -32,3 +32,7 @@ Deve ser utilizado no mínimo HTML, CSS, PHP e um banco de dados durante o dense
 - Faça uma PR para este repositório com instruções claras de como executar seu código.
 
 Sua PR será avaliada e lhe daremos um feedback o mais rápido possível.
+
+
+
+docker run --name backendchallenge -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_DB=backendchallenge -e POSTGRES_PASSWORD=docker -d postgres
