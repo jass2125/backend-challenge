@@ -7,8 +7,11 @@ require('./database');
 const routes = Router();
 
 routes.post('/login', SessionController.login);
+
 routes.get('/contacts', ContactController.findAll);
 routes.delete('/contacts/:id', ContactController.delete);
+routes.put('/contacts/:id', ContactController.update);
+routes.post('/contacts', ContactController.store);
 
 
 // routes.post('/contacts', async (req, res) => {
