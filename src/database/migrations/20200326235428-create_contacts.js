@@ -1,5 +1,3 @@
-const { Sequelize } = ('sequelize');
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('contacts', {
