@@ -18,7 +18,6 @@ class ContactController {
 
   async update(req, res) {
     const { id } = req.params;
-    const { name, phone } = req.body;
     const contact = await Contact.findOne({ where: { id } });
     if (!contact) {
       return res.status(500).json({ msg: 'Contact nont exists' })
