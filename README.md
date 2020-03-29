@@ -1,3 +1,4 @@
+
 # Back-end Challenge
 
 Esse teste é para conhecermos melhor o seu perfil como desenvolvedor, como você escreve seu código, como você toma decisões e como resolve os problemas propostos.
@@ -33,6 +34,19 @@ Deve ser utilizado no mínimo HTML, CSS, PHP e um banco de dados durante o dense
 
 Sua PR será avaliada e lhe daremos um feedback o mais rápido possível.
 
+## Como executar
+  - Instale as dependências
 
+    npm install
 
-docker run --name backendchallenge -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_DB=backendchallenge -e POSTGRES_PASSWORD=docker -d postgres
+  - Execute o banco
+
+    docker run --name backendchallenge -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_DB=backendchallenge -e POSTGRES_PASSWORD=docker -d postgres
+
+  - Execute as migrations
+
+    npx sequelize db:migrate
+    
+  - Execute as seeds
+
+    npx sequelize db:seed:all
