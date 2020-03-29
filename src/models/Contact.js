@@ -10,13 +10,13 @@ class Contact extends Model {
     }, {
       sequelize,
       tableName: 'contacts',
-      
     })
     Contact.belongsTo(User, {
       targetKey: 'id',
       foreignKey: 'id_user'
     });
   }
+
 }
 
 module.exports = Contact;

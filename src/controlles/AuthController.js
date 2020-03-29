@@ -9,6 +9,7 @@ class AuthController {
 
     try {
       const check = await jwt.verify(token, authConfig.secret);
+      req.id = check.id;
       return next();
     } catch (err) {
       return res.status(403).json({ msg: 'Token invalid' });

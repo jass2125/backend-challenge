@@ -19,15 +19,27 @@ class ContactController {
   async update(req, res) {
     const { id } = req.params;
     const contact = await Contact.findOne({ where: { id } });
+
     if (!contact) {
       return res.status(500).json({ msg: 'Contact nont exists' })
     }
-    const contactSaved = await Contact.update(req.body, { where: { id } });
+    req.body.user = {
+      id: req.id
+    }
+    const con = req.body;
+    con.id_user = req.id
+    
+    const contactSaved = await Contact.update(con, {
+      where: { id }
+    }
+    );
     return res.json(contactSaved);
   }
 
   async store(req, res) {
-    const contact = await Contact.create(req.body);
+    const cont = req.body;
+    cont.id_user = req.id;
+    const contact = await Contact.create(cont);
     return res.json(contact);
   }
 
